@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1098B6A02A84519900E30C7A /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B69F2A84519900E30C7A /* Gym.swift */; };
+		1098B6A22A84526400E30C7A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A12A84526400E30C7A /* Api.swift */; };
+		1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A32A8462ED00E30C7A /* Extensions.swift */; };
+		1098B6A82A84755900E30C7A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A72A84755900E30C7A /* Main.swift */; };
+		1098B6AC2A84797300E30C7A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6AB2A84797300E30C7A /* ViewModel.swift */; };
+		13A61E8A2460C89500445A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E892460C89500445A02 /* AppDelegate.swift */; };
+		13A61E8C2460C89500445A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E8B2460C89500445A02 /* SceneDelegate.swift */; };
+		13A61E8E2460C89500445A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E8D2460C89500445A02 /* ViewController.swift */; };
+		13A61E932460C89A00445A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A61E922460C89A00445A02 /* Assets.xcassets */; };
+		13A61E962460C89A00445A02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A61E942460C89A00445A02 /* LaunchScreen.storyboard */; };
+		13A61EA12460C89A00445A02 /* XeroProgrammingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61EA02460C89A00445A02 /* XeroProgrammingExerciseTests.swift */; };
+		13A61EAC2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61EAB2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift */; };
+		13A61EBB2460CA4F00445A02 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61EBA2460CA4F00445A02 /* Invoice.swift */; };
+		13A61EBD2460CA5C00445A02 /* InvoiceLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61EBC2460CA5C00445A02 /* InvoiceLine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		13A61E9D2460C89A00445A02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13A61E7E2460C89500445A02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13A61E852460C89500445A02;
+			remoteInfo = XeroProgrammingExercise;
+		};
+		13A61EA82460C89A00445A02 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 13A61E7E2460C89500445A02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13A61E852460C89500445A02;
+			remoteInfo = XeroProgrammingExercise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1098B69F2A84519900E30C7A /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
+		1098B6A12A84526400E30C7A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		1098B6A32A8462ED00E30C7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		1098B6A72A84755900E30C7A /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		1098B6AB2A84797300E30C7A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		13A61E862460C89500445A02 /* XeroProgrammingExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XeroProgrammingExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13A61E892460C89500445A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		13A61E8B2460C89500445A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		13A61E8D2460C89500445A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13A61E922460C89A00445A02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		13A61E952460C89A00445A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13A61E972460C89A00445A02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13A61E9C2460C89A00445A02 /* XeroProgrammingExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XeroProgrammingExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13A61EA02460C89A00445A02 /* XeroProgrammingExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XeroProgrammingExerciseTests.swift; sourceTree = "<group>"; };
+		13A61EA22460C89A00445A02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13A61EA72460C89A00445A02 /* XeroProgrammingExerciseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XeroProgrammingExerciseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13A61EAB2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XeroProgrammingExerciseUITests.swift; sourceTree = "<group>"; };
+		13A61EAD2460C89A00445A02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13A61EBA2460CA4F00445A02 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		13A61EBC2460CA5C00445A02 /* InvoiceLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceLine.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13A61E832460C89500445A02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13A61E992460C89A00445A02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13A61EA42460C89A00445A02 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13A61E7D2460C89500445A02 = {
+			isa = PBXGroup;
+			children = (
+				13A61E882460C89500445A02 /* XeroProgrammingExercise */,
+				13A61E9F2460C89A00445A02 /* XeroProgrammingExerciseTests */,
+				13A61EAA2460C89A00445A02 /* XeroProgrammingExerciseUITests */,
+				13A61E872460C89500445A02 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		13A61E872460C89500445A02 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13A61E862460C89500445A02 /* XeroProgrammingExercise.app */,
+				13A61E9C2460C89A00445A02 /* XeroProgrammingExerciseTests.xctest */,
+				13A61EA72460C89A00445A02 /* XeroProgrammingExerciseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		13A61E882460C89500445A02 /* XeroProgrammingExercise */ = {
+			isa = PBXGroup;
+			children = (
+				13A61E892460C89500445A02 /* AppDelegate.swift */,
+				13A61E8B2460C89500445A02 /* SceneDelegate.swift */,
+				13A61E8D2460C89500445A02 /* ViewController.swift */,
+				13A61E922460C89A00445A02 /* Assets.xcassets */,
+				13A61E942460C89A00445A02 /* LaunchScreen.storyboard */,
+				13A61E972460C89A00445A02 /* Info.plist */,
+				13A61EBA2460CA4F00445A02 /* Invoice.swift */,
+				13A61EBC2460CA5C00445A02 /* InvoiceLine.swift */,
+				1098B69F2A84519900E30C7A /* Gym.swift */,
+				1098B6A12A84526400E30C7A /* Api.swift */,
+				1098B6A32A8462ED00E30C7A /* Extensions.swift */,
+				1098B6A72A84755900E30C7A /* Main.swift */,
+				1098B6AB2A84797300E30C7A /* ViewModel.swift */,
+			);
+			path = XeroProgrammingExercise;
+			sourceTree = "<group>";
+		};
+		13A61E9F2460C89A00445A02 /* XeroProgrammingExerciseTests */ = {
+			isa = PBXGroup;
+			children = (
+				13A61EA02460C89A00445A02 /* XeroProgrammingExerciseTests.swift */,
+				13A61EA22460C89A00445A02 /* Info.plist */,
+			);
+			path = XeroProgrammingExerciseTests;
+			sourceTree = "<group>";
+		};
+		13A61EAA2460C89A00445A02 /* XeroProgrammingExerciseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				13A61EAB2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift */,
+				13A61EAD2460C89A00445A02 /* Info.plist */,
+			);
+			path = XeroProgrammingExerciseUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		13A61E852460C89500445A02 /* XeroProgrammingExercise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13A61EB02460C89A00445A02 /* Build configuration list for PBXNativeTarget "XeroProgrammingExercise" */;
+			buildPhases = (
+				13A61E822460C89500445A02 /* Sources */,
+				13A61E832460C89500445A02 /* Frameworks */,
+				13A61E842460C89500445A02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XeroProgrammingExercise;
+			productName = XeroProgrammingExercise;
+			productReference = 13A61E862460C89500445A02 /* XeroProgrammingExercise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		13A61E9B2460C89A00445A02 /* XeroProgrammingExerciseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13A61EB32460C89A00445A02 /* Build configuration list for PBXNativeTarget "XeroProgrammingExerciseTests" */;
+			buildPhases = (
+				13A61E982460C89A00445A02 /* Sources */,
+				13A61E992460C89A00445A02 /* Frameworks */,
+				13A61E9A2460C89A00445A02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13A61E9E2460C89A00445A02 /* PBXTargetDependency */,
+			);
+			name = XeroProgrammingExerciseTests;
+			productName = XeroProgrammingExerciseTests;
+			productReference = 13A61E9C2460C89A00445A02 /* XeroProgrammingExerciseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13A61EA62460C89A00445A02 /* XeroProgrammingExerciseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13A61EB62460C89A00445A02 /* Build configuration list for PBXNativeTarget "XeroProgrammingExerciseUITests" */;
+			buildPhases = (
+				13A61EA32460C89A00445A02 /* Sources */,
+				13A61EA42460C89A00445A02 /* Frameworks */,
+				13A61EA52460C89A00445A02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				13A61EA92460C89A00445A02 /* PBXTargetDependency */,
+			);
+			name = XeroProgrammingExerciseUITests;
+			productName = XeroProgrammingExerciseUITests;
+			productReference = 13A61EA72460C89A00445A02 /* XeroProgrammingExerciseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		13A61E7E2460C89500445A02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = "Xero Ltd";
+				TargetAttributes = {
+					13A61E852460C89500445A02 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					13A61E9B2460C89A00445A02 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 13A61E852460C89500445A02;
+					};
+					13A61EA62460C89A00445A02 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 13A61E852460C89500445A02;
+					};
+				};
+			};
+			buildConfigurationList = 13A61E812460C89500445A02 /* Build configuration list for PBXProject "XeroProgrammingExercise" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 13A61E7D2460C89500445A02;
+			productRefGroup = 13A61E872460C89500445A02 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13A61E852460C89500445A02 /* XeroProgrammingExercise */,
+				13A61E9B2460C89A00445A02 /* XeroProgrammingExerciseTests */,
+				13A61EA62460C89A00445A02 /* XeroProgrammingExerciseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		13A61E842460C89500445A02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13A61E962460C89A00445A02 /* LaunchScreen.storyboard in Resources */,
+				13A61E932460C89A00445A02 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13A61E9A2460C89A00445A02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13A61EA52460C89A00445A02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13A61E822460C89500445A02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1098B6AC2A84797300E30C7A /* ViewModel.swift in Sources */,
+				1098B6A82A84755900E30C7A /* Main.swift in Sources */,
+				13A61E8E2460C89500445A02 /* ViewController.swift in Sources */,
+				1098B6A02A84519900E30C7A /* Gym.swift in Sources */,
+				13A61EBD2460CA5C00445A02 /* InvoiceLine.swift in Sources */,
+				1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */,
+				13A61EBB2460CA4F00445A02 /* Invoice.swift in Sources */,
+				13A61E8A2460C89500445A02 /* AppDelegate.swift in Sources */,
+				1098B6A22A84526400E30C7A /* Api.swift in Sources */,
+				13A61E8C2460C89500445A02 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13A61E982460C89A00445A02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13A61EA12460C89A00445A02 /* XeroProgrammingExerciseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13A61EA32460C89A00445A02 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13A61EAC2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		13A61E9E2460C89A00445A02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13A61E852460C89500445A02 /* XeroProgrammingExercise */;
+			targetProxy = 13A61E9D2460C89A00445A02 /* PBXContainerItemProxy */;
+		};
+		13A61EA92460C89A00445A02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13A61E852460C89500445A02 /* XeroProgrammingExercise */;
+			targetProxy = 13A61EA82460C89A00445A02 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		13A61E942460C89A00445A02 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				13A61E952460C89A00445A02 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		13A61EAE2460C89A00445A02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		13A61EAF2460C89A00445A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		13A61EB12460C89A00445A02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				INFOPLIST_FILE = XeroProgrammingExercise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xero.programmingExercise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		13A61EB22460C89A00445A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				INFOPLIST_FILE = XeroProgrammingExercise/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xero.programmingExercise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		13A61EB42460C89A00445A02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				INFOPLIST_FILE = XeroProgrammingExerciseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xero.programmingExercise.XeroProgrammingExerciseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XeroProgrammingExercise.app/XeroProgrammingExercise";
+			};
+			name = Debug;
+		};
+		13A61EB52460C89A00445A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				INFOPLIST_FILE = XeroProgrammingExerciseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xero.programmingExercise.XeroProgrammingExerciseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XeroProgrammingExercise.app/XeroProgrammingExercise";
+			};
+			name = Release;
+		};
+		13A61EB72460C89A00445A02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				INFOPLIST_FILE = XeroProgrammingExerciseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xero.programmingExercise.XeroProgrammingExerciseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = XeroProgrammingExercise;
+			};
+			name = Debug;
+		};
+		13A61EB82460C89A00445A02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				INFOPLIST_FILE = XeroProgrammingExerciseUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xero.programmingExercise.XeroProgrammingExerciseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = XeroProgrammingExercise;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		13A61E812460C89500445A02 /* Build configuration list for PBXProject "XeroProgrammingExercise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A61EAE2460C89A00445A02 /* Debug */,
+				13A61EAF2460C89A00445A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13A61EB02460C89A00445A02 /* Build configuration list for PBXNativeTarget "XeroProgrammingExercise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A61EB12460C89A00445A02 /* Debug */,
+				13A61EB22460C89A00445A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13A61EB32460C89A00445A02 /* Build configuration list for PBXNativeTarget "XeroProgrammingExerciseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A61EB42460C89A00445A02 /* Debug */,
+				13A61EB52460C89A00445A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13A61EB62460C89A00445A02 /* Build configuration list for PBXNativeTarget "XeroProgrammingExerciseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13A61EB72460C89A00445A02 /* Debug */,
+				13A61EB82460C89A00445A02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 13A61E7E2460C89500445A02 /* Project object */;
+}
