@@ -27,19 +27,16 @@ class XeroProgrammingExerciseUITests: XCTestCase {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
+        print(app.debugDescription)
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCTAssertTrue(app.staticTexts["Invoices"].exists)
-        
+        let invoices = app.scrollViews.element.buttons
+        XCTAssertTrue(invoices.count == 3)
+        XCTAssertTrue(invoices.element(boundBy: 0).label.contains("41.32"))
+        XCTAssertTrue(invoices.element(boundBy: 1).label.contains("24.03"))
+        XCTAssertTrue(invoices.element(boundBy: 2).label.contains("9.99"))
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }
