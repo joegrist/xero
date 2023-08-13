@@ -145,4 +145,10 @@ class XeroProgrammingExerciseTests: XCTestCase {
         invoice.removeItems(alsoPresentIn: other)
         XCTAssertEqual(list, [2])
     }
+    
+    func testCurrency() {
+        let value: Decimal = 1.9
+        XCTAssertEqual(value.toCurrencyFormat(), "$1.90")
+        XCTAssertEqual(value.toCurrencySpokenText(), "1.90 Australian dollars")
+    }
 }

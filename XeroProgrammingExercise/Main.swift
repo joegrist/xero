@@ -40,6 +40,14 @@ struct Logo: View {
     }
 }
 
+func navAppearance(color: UIColor) {
+    let appearance = UINavigationBarAppearance()
+    let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: color]
+    appearance.largeTitleTextAttributes = attrs
+    appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+    UINavigationBar.appearance().standardAppearance = appearance
+}
+
 struct Main: View {
     
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
@@ -49,11 +57,7 @@ struct Main: View {
         // I've hacked the main list in this mini-app to always have
         // a dark green background.  So we need to make sure the title
         // text is always white for contrast, ignoring dark/light mode.
-        let appearance = UINavigationBarAppearance()
-        let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.white]
-        appearance.largeTitleTextAttributes = attrs
-        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-        UINavigationBar.appearance().standardAppearance = appearance
+        navAppearance(color: UIColor.white)
     }
     
     var body: some View {
@@ -63,7 +67,9 @@ struct Main: View {
                 Color("Brand").ignoresSafeArea()
                 VStack {
                     Spacer()
-                    Logo().foregroundColor(.white)
+                    Logo()
+                        .foregroundColor(.white)
+                        .accessibilityHidden(true)
                 }
                 ScrollView {
                     InvoiceList(model: viewModel)
@@ -73,9 +79,11 @@ struct Main: View {
                 // For real app, would need an empty view here
             }
         }
-        .onAppear(perform: viewModel.animate)
+        .onAppear(perform: {
+            viewModel.animate()
+            navAppearance(color: UIColor.white)
+        })
         .accentColor(Color("Brand"))
-           
     }
 }
 
@@ -115,10 +123,14 @@ struct InvoiceCard: View {
     var body: some View {
         HStack(alignment: .center) {
             Text("\(model.invoice.number)").font(.title).foregroundColor(Color("Brand"))
+                .accessibilityLabel("Number \(model.invoice.number)")
             Spacer()
             VStack(alignment: .trailing) {
-                Text("\(model.invoice.formattedDate)").font(.caption).foregroundColor(.secondary)
+                Text("\(model.invoice.formattedDate)")
+                    .font(.footnote)
+                    .accessibilityHidden(true)
                 Text("\(model.invoice.formattedTotal)")
+                    .accessibilityLabel(model.invoice.speakableTotal)
             }
             Image(systemName: "chevron.right.circle.fill").foregroundColor(Color("Brand"))
         }
@@ -133,15 +145,23 @@ struct InvoiceView: View {
         ZStack {
             VStack {
                 Spacer()
-                Logo().foregroundColor(Color("Brand"))
+                Logo()
+                    .foregroundColor(Color("Brand"))
+                    .accessibilityHidden(true)
             }
             ScrollView {
                 VStack(alignment: .leading) {
+                    Text("Invoice \(model.number)").font(.largeTitle).bold()
+                        .padding([.bottom])
                     HStack(alignment: .firstTextBaseline) {
-                        Text(model.formattedTotal).foregroundColor(Color("Brand")).font(.largeTitle)
+                        Text(model.formattedTotal).foregroundColor(Color("Brand")).font(.title)
+                            .accessibilityLabel(model.speakableTotal)
                         Spacer()
                         Text(model.formattedDate)
-                    }.font(.subheadline).foregroundColor(.secondary)
+                            .font(.footnote)
+                    }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityAddTraits(.isSummaryElement)
                     Divider()
                     VStack(alignment: .leading) {
                         ForEach(model.lineItems) { item in
@@ -149,14 +169,17 @@ struct InvoiceView: View {
                                 .frame(maxWidth: .infinity)
                         }
                     }
+                    .accessibilityElement(children: .contain)
+                    .accessibilityLabel("Line Items")
                     Spacer()
                 }
                 .frame(maxWidth: 600)
             }
             .padding()
+            .accessibilityElement(children: .contain)
         }
-       .navigationTitle("Invoice \(model.number)")
-       .navigationBarTitleDisplayMode(.inline)
+       
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -170,8 +193,11 @@ struct InvoiceLineView: View {
                 Text("\(model.quantity) @ \(model.formattedCost)")
             }
             Spacer()
-            Text(model.formattedTotal).font(.title2).foregroundColor(.secondary)
+            Text(model.formattedTotal)
+                .font(.title2)
+                .accessibilityLabel(model.speakableTotal)
         }
+        .accessibilityElement(children: .combine)
         Divider()
     }
 }

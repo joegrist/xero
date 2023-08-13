@@ -37,6 +37,10 @@ public struct InvoiceLine: CustomDebugStringConvertible, Equatable, Identifiable
         return totalCost.toCurrencyFormat()
     }
     
+    var speakableTotal: String {
+        return totalCost.toCurrencySpokenText()
+    }
+    
     var totalCost: Decimal {
         get {
             return Decimal(quantity) * cost

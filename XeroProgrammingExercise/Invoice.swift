@@ -65,6 +65,10 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
     var formattedTotal: String {
         return total.toCurrencyFormat()
     }
+    
+    var speakableTotal: String {
+        return total.toCurrencySpokenText()
+    }
 
     var formattedDate: String {
         return date.toStandardFormat()

@@ -23,12 +23,21 @@ extension Date {
 }
 
 extension Decimal {
-    func toCurrencyFormat() -> String {
-        // Assuming for this excercide we will just assume always AUD
+    
+    private func formattedCurrency(style: NumberFormatter.Style) -> String {
         let currencyFormatter = NumberFormatter()
-        currencyFormatter.numberStyle = .currency
+        // Assuming for this exercise we will just assume always AUD
         currencyFormatter.locale = Locale(identifier: "en_AU")
+        currencyFormatter.numberStyle = style
         return currencyFormatter.string(from: self as NSNumber) ?? ""
+    }
+    
+    func toCurrencyFormat() -> String {
+        return formattedCurrency(style: .currency)
+    }
+    
+    func toCurrencySpokenText() -> String {
+        return formattedCurrency(style: .currencyPlural)
     }
 }
 
