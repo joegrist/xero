@@ -7,10 +7,22 @@
 //
 
 import Foundation
+import XeroShared
 
 class Api {
     
+    private static var isUnderTest: Bool {
+        return ProcessInfo.processInfo.arguments.contains(XeroShared.Config.TEST_ARGUMENT)
+    }
+    
     static func getInvoices() -> [Invoice] {
+        
+        if isUnderTest {
+            print("In a real app, we'd load our dummy data here.")
+        } else {
+            print("In a real app, we'd update our cache here from server data, asynchrononously.")
+        }
+        
         let invoice1 = Invoice(number: 1)
         
         do {

@@ -7,36 +7,102 @@
 //
 
 import XCTest
+import XeroShared
+
+// Classes representing pages are a good what to organise UI test coce
+class Screen {
+    internal let app: XCUIApplication
+    
+    init(of app: XCUIApplication) {
+        self.app = app
+    }
+    
+    var at: Bool {
+        return false
+    }
+}
+
+class HomeScreen: Screen {
+    
+    var secondInvoice: XCUIElement {
+        let nav = invoices.element(boundBy: 2)
+        if !nav.waitForExistence(timeout: 2) {
+            XCTFail("List of invoices did not appear")
+        }
+        return nav
+    }
+    
+    var invoices: XCUIElementQuery {
+        return app.scrollViews.element.buttons
+    }
+    
+    override var at: Bool {
+        return app.staticTexts["Invoices"].exists
+    }
+}
+
+class ListScreen: Screen {
+    
+    var backButton: XCUIElement {
+        return app.buttons["Invoices"]
+    }
+    
+    override var at: Bool{
+        return backButton.exists
+    }
+}
 
 class XeroProgrammingExerciseUITests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func launch() -> XCUIApplication {
         let app = XCUIApplication()
+        app.launchArguments.append(XeroShared.Config.TEST_ARGUMENT)
         app.launch()
-        print(app.debugDescription)
-        
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertTrue(app.staticTexts["Invoices"].exists)
-        let invoices = app.scrollViews.element.buttons
-        XCTAssertTrue(invoices.count == 3)
-        XCTAssertTrue(invoices.element(boundBy: 0).label.contains("41.32"))
-        XCTAssertTrue(invoices.element(boundBy: 1).label.contains("24.03"))
-        XCTAssertTrue(invoices.element(boundBy: 2).label.contains("9.99"))
+        //print(app.debugDescription)
+        return app
+    }
+    
+    // Does it launch OK?
+    func testLaunch() throws {
+        let app = launch()
+        let home = HomeScreen(of: app)
+        XCTAssert(home.at)
+    }
+    
+    // First screen contains valid data
+    func testFirstScreenContents() throws {
+        let app = launch()
+        let home = HomeScreen(of: app)
+        XCTAssertTrue(home.invoices.count == 3)
+        XCTAssertTrue(home.invoices.element(boundBy: 0).label.contains("41.32"))
+        XCTAssertTrue(home.invoices.element(boundBy: 1).label.contains("24.03"))
+        XCTAssertTrue(home.invoices.element(boundBy: 2).label.contains("9.99"))
     }
 
+    // Can navigate in and out of second screen
+    func testNavigation() throws {
+        let app = launch()
+        let home = HomeScreen(of: app)
+        let list = ListScreen(of: app)
+        XCTAssert(home.at)
+        home.secondInvoice.tap()
+        XCTAssert(list.at)
+        list.backButton.tap()
+        XCTAssert(home.at)
+    }
+    
+    func testInvoiceDetails() {
+        let app = launch()
+        let home = HomeScreen(of: app)
+        let list = ListScreen(of: app)
+        home.secondInvoice.tap()
+        XCTAssert(list.at)
+    }
 }

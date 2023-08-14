@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10757C4A2A89AA9200609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C492A89AA9200609597 /* XeroShared */; };
+		10757C4C2A89AAD400609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C4B2A89AAD400609597 /* XeroShared */; };
+		10757C4E2A89AAF400609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C4D2A89AAF400609597 /* XeroShared */; };
 		1098B6A02A84519900E30C7A /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B69F2A84519900E30C7A /* Gym.swift */; };
 		1098B6A22A84526400E30C7A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A12A84526400E30C7A /* Api.swift */; };
 		1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A32A8462ED00E30C7A /* Extensions.swift */; };
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10757C472A89A45100609597 /* XeroShared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = XeroShared; sourceTree = "<group>"; };
 		1098B69F2A84519900E30C7A /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
 		1098B6A12A84526400E30C7A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		1098B6A32A8462ED00E30C7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10757C4A2A89AA9200609597 /* XeroShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10757C4C2A89AAD400609597 /* XeroShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,19 +88,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10757C4E2A89AAF400609597 /* XeroShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10757C482A89AA9200609597 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		13A61E7D2460C89500445A02 = {
 			isa = PBXGroup;
 			children = (
+				10757C472A89A45100609597 /* XeroShared */,
 				13A61E882460C89500445A02 /* XeroProgrammingExercise */,
 				13A61E9F2460C89A00445A02 /* XeroProgrammingExerciseTests */,
 				13A61EAA2460C89A00445A02 /* XeroProgrammingExerciseUITests */,
 				13A61E872460C89500445A02 /* Products */,
+				10757C482A89AA9200609597 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +178,9 @@
 			dependencies = (
 			);
 			name = XeroProgrammingExercise;
+			packageProductDependencies = (
+				10757C492A89AA9200609597 /* XeroShared */,
+			);
 			productName = XeroProgrammingExercise;
 			productReference = 13A61E862460C89500445A02 /* XeroProgrammingExercise.app */;
 			productType = "com.apple.product-type.application";
@@ -180,6 +199,9 @@
 				13A61E9E2460C89A00445A02 /* PBXTargetDependency */,
 			);
 			name = XeroProgrammingExerciseTests;
+			packageProductDependencies = (
+				10757C4B2A89AAD400609597 /* XeroShared */,
+			);
 			productName = XeroProgrammingExerciseTests;
 			productReference = 13A61E9C2460C89A00445A02 /* XeroProgrammingExerciseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -198,6 +220,9 @@
 				13A61EA92460C89A00445A02 /* PBXTargetDependency */,
 			);
 			name = XeroProgrammingExerciseUITests;
+			packageProductDependencies = (
+				10757C4D2A89AAF400609597 /* XeroShared */,
+			);
 			productName = XeroProgrammingExerciseUITests;
 			productReference = 13A61EA72460C89A00445A02 /* XeroProgrammingExerciseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -613,6 +638,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10757C492A89AA9200609597 /* XeroShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = XeroShared;
+		};
+		10757C4B2A89AAD400609597 /* XeroShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = XeroShared;
+		};
+		10757C4D2A89AAF400609597 /* XeroShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = XeroShared;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 13A61E7E2460C89500445A02 /* Project object */;
 }
