@@ -22,6 +22,7 @@ class XeroProgrammingExerciseUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments.append(XeroShared.Config.TEST_ARGUMENT)
         app.launch()
+        //print(app.debugDescription)
         return app
     }
     
@@ -60,6 +61,5 @@ class XeroProgrammingExerciseUITests: XCTestCase {
         let list = ListScreen(of: app)
         home.secondInvoice.tap()
         XCTAssert(list.at)
-        print(app.debugDescription)
     }
 }

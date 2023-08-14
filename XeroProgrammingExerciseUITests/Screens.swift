@@ -25,7 +25,7 @@ class Screen {
 class HomeScreen: Screen {
     
     var secondInvoice: XCUIElement {
-        let nav = invoices.element(boundBy: 1)
+        let nav = invoices.element(boundBy: 2)
         if !nav.waitForExistence(timeout: 2) {
             XCTFail("List of invoices did not appear")
         }

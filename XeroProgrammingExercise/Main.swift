@@ -40,14 +40,29 @@ struct Logo: View {
     }
 }
 
+func navAppearance(color: UIColor) {
+    let appearance = UINavigationBarAppearance()
+    let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: color]
+    appearance.largeTitleTextAttributes = attrs
+    appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+    UINavigationBar.appearance().standardAppearance = appearance
+}
+
 struct Main: View {
     
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     @StateObject private var viewModel = ListModel()
     
+    init() {
+        // I've hacked the main list in this mini-app to always have
+        // a dark green background.  So we need to make sure the title
+        // text is always white for contrast, ignoring dark/light mode.
+        navAppearance(color: UIColor.white)
+    }
+    
     var body: some View {
         
-        NavigationStack {
+        NavigationView {
             ZStack {
                 Color("Brand").ignoresSafeArea()
                 VStack {
@@ -68,14 +83,7 @@ struct Main: View {
             if !appDelegate.isPreview {
                 viewModel.animate()
             }
-            // I've hacked the main list in this mini-app to always have
-            // a dark green background.  So we need to make sure the title
-            // text is always white for contrast, ignoring dark/light mode.
-            // This is bad, as the title bar in the second screen also
-            // comes up white, and I didn't find a way to change it.
-            // So it's faked below.
-            // Would have to do better in a real app.
-            appDelegate.paintLargeNavigationTitle(color: UIColor.white)
+            navAppearance(color: UIColor.white)
         })
         .accentColor(Color("Brand"))
     }
@@ -84,8 +92,6 @@ struct Main: View {
 struct InvoiceList: View {
     
     @ObservedObject var model: Main.ListModel
-    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-    @State private var showingInvoice = false
     
     func makeSlideEffect(model: Main.InvoiceModel) -> some GeometryEffect {
       return SlideEffect(
@@ -95,7 +101,7 @@ struct InvoiceList: View {
     var body: some View {
         LazyVStack(alignment: .center) {
             ForEach(model.invoices, id: \.invoice.id) { model in
-                NavigationLink(value: model.invoice) {
+                NavigationLink(destination: InvoiceView(model: model.invoice)) {
                      InvoiceCard(model: model)
                         .foregroundColor(Color(UIColor.label))
                         .padding()
@@ -106,9 +112,6 @@ struct InvoiceList: View {
                         .modifier(makeSlideEffect(model: model))
                         .animation(.easeInOut, value: model.hidden)
                 }
-            }
-            .navigationDestination(for: Invoice.self) {
-                InvoiceView(model: $0)
             }
             .frame(maxWidth: 600) // Readable width, more or less
         }
@@ -138,9 +141,6 @@ struct InvoiceCard: View {
 }
 
 struct InvoiceView: View {
-    
-    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-    
     var model: Invoice
     
     var body: some View {
@@ -153,6 +153,10 @@ struct InvoiceView: View {
             }
             ScrollView {
                 VStack(alignment: .leading) {
+                    // Hmm. Faking a navigation header.
+                    // Not good.  SwiftUI not letting me change the colour here on an actual one,
+                    // comes up white.
+                    // Would have to do better in a real app.
                     Text("Invoice \(model.number)").font(.largeTitle).bold()
                         .padding([.bottom])
                     HStack(alignment: .firstTextBaseline) {
@@ -183,8 +187,7 @@ struct InvoiceView: View {
             .accessibilityElement(children: .contain)
         }
        
-        .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Hi")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
