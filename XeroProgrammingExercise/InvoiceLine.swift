@@ -38,7 +38,7 @@ public struct InvoiceLine: CustomDebugStringConvertible, Equatable, Identifiable
         return cost.toCurrencyFormat()
     }
     
-    /** `totalCost` formatted for onscreen text */
+    /** `totalCost` formatted for on-screen text */
     var formattedTotal: String {
         return totalCost.toCurrencyFormat()
     }

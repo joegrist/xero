@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 extension Main {
     
+    /** UI state for individual invoices */
     class InvoiceModel {
         
         var invoice: Invoice
@@ -20,8 +22,10 @@ extension Main {
         }
     }
     
-    @MainActor class ViewModel: ObservableObject {
+    /** UI state for the list of invoices */
+    @MainActor class ListModel: ObservableObject {
         
+        // FIXME: Should be somewhere with lifecycle matching app, like Core Data or similar
         @Published var invoices: [InvoiceModel] = []
 
         init() {
@@ -34,13 +38,9 @@ extension Main {
          * Activate list row animation on presentatom
          * Works OK for mini-app
          * For realsies, would have to make sure it only applies to the first screenload
-         * And only runs on first data fetch from empty
+         * Also make sure only runs on first data display from empty
          */
         func animate() {
-            
-            // Ignore in Xcode
-            guard !isPreview else { return }
-            
             invoices.forEach{ $0.hidden = true }
             var delay: TimeInterval = 0
             invoices.forEach { model in

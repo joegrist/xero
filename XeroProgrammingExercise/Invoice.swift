@@ -75,30 +75,22 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         return lineItems.reduce(0, {total, line in total + line.totalCost })
     }
     
-    /**
-     * Cost of this invoice formatted for on-screen text
-     */
+    /** Cost of this invoice formatted for on-screen text */
     var formattedTotal: String {
         return total.toCurrencyFormat()
     }
     
-    /**
-     * Cost of this invoice formatted for scrfeen readers
-     */
+    /** Cost of this invoice formatted for scrfeen readers */
     var speakableTotal: String {
         return total.toCurrencySpokenText()
     }
 
-    /**
-     * Date of this invoice in standard app date format
-     */
+    /** Date of this invoice in standard app date format */
     var formattedDate: String {
         return date.toStandardFormat()
     }
     
-    /**
-     * Appends the items from the `from` to the current invoice
-     */
+    /** Appends the items from the `from` to the current invoice */
     func appendItems(from other: Invoice) throws {
         try other.lineItems.forEach { item in
             guard indexOfExisting(where: item.invoiceLineId) == nil else {
@@ -119,16 +111,12 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         return result
     }
     
-    /**
-     * Order the lineItems by Id
-     * */
+    /** Order the lineItems by `Id` */
     func orderLineItems() {
         lineItems = lineItems.sorted{ $0.invoiceLineId < $1.invoiceLineId }
     }
     
-    /**
-     * Console-logs up to `max` line items, if available
-     */
+    /** Console-logs up to `max` line items, if available */
     func debugLineItems(_ limit: Int) {
         
         // Clamp limit
@@ -141,9 +129,7 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         }
     }
     
-    /**
-     * Remove the line items in the current invoice that are also in the sourceInvoice
-     */
+    /** Remove the line items in the current invoice that are also in the sourceInvoice */
     func removeItems(alsoPresentIn other: Invoice) {
         var result: [InvoiceLine] = []
         lineItems.forEach { item in
@@ -153,9 +139,7 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         lineItems = result
     }
     
-    /**
-     * String representation of invoice
-     */
+    /** String representation of invoice */
     public var debugDescription: String {
         get {
             let num = number

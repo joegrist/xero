@@ -26,7 +26,7 @@ extension Decimal {
     
     private func formattedCurrency(style: NumberFormatter.Style) -> String {
         let currencyFormatter = NumberFormatter()
-        // Assuming for this exercise we will just assume always AUD
+        // Assuming for this exercise we will just be AUD
         currencyFormatter.locale = Locale(identifier: "en_AU")
         currencyFormatter.numberStyle = style
         return currencyFormatter.string(from: self as NSNumber) ?? ""
@@ -40,9 +40,3 @@ extension Decimal {
         return formattedCurrency(style: .currencyPlural)
     }
 }
-
-
-var isPreview: Bool {
-    return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
-}
-

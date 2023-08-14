@@ -51,7 +51,7 @@ func navAppearance(color: UIColor) {
 struct Main: View {
     
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
-    @StateObject private var viewModel = ViewModel()
+    @StateObject private var viewModel = ListModel()
     
     init() {
         // I've hacked the main list in this mini-app to always have
@@ -80,7 +80,9 @@ struct Main: View {
             }
         }
         .onAppear(perform: {
-            viewModel.animate()
+            if !appDelegate.isPreview {
+                viewModel.animate()
+            }
             navAppearance(color: UIColor.white)
         })
         .accentColor(Color("Brand"))
@@ -89,7 +91,7 @@ struct Main: View {
 
 struct InvoiceList: View {
     
-    @ObservedObject var model: Main.ViewModel
+    @ObservedObject var model: Main.ListModel
     
     func makeSlideEffect(model: Main.InvoiceModel) -> some GeometryEffect {
       return SlideEffect(
@@ -210,12 +212,12 @@ struct Main_Previews: PreviewProvider {
 
 struct InvoiceList_Previews: PreviewProvider {
     static var previews: some View {
-        InvoiceList(model: Main.ViewModel())
+        InvoiceList(model: Main.ListModel())
     }
 }
 
 struct InvoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        InvoiceView(model: Main.ViewModel().invoices.first!.invoice)
+        InvoiceView(model: Main.ListModel().invoices.first!.invoice)
     }
 }

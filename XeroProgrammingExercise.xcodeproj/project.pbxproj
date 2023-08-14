@@ -10,6 +10,7 @@
 		10757C4A2A89AA9200609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C492A89AA9200609597 /* XeroShared */; };
 		10757C4C2A89AAD400609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C4B2A89AAD400609597 /* XeroShared */; };
 		10757C4E2A89AAF400609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C4D2A89AAF400609597 /* XeroShared */; };
+		10757C502A89BBEB00609597 /* Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10757C4F2A89BBEB00609597 /* Screens.swift */; };
 		1098B6A02A84519900E30C7A /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B69F2A84519900E30C7A /* Gym.swift */; };
 		1098B6A22A84526400E30C7A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A12A84526400E30C7A /* Api.swift */; };
 		1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A32A8462ED00E30C7A /* Extensions.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		10757C472A89A45100609597 /* XeroShared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = XeroShared; sourceTree = "<group>"; };
+		10757C4F2A89BBEB00609597 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		1098B69F2A84519900E30C7A /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
 		1098B6A12A84526400E30C7A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		1098B6A32A8462ED00E30C7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				13A61EAB2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift */,
+				10757C4F2A89BBEB00609597 /* Screens.swift */,
 				13A61EAD2460C89A00445A02 /* Info.plist */,
 			);
 			path = XeroProgrammingExerciseUITests;
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13A61EAC2460C89A00445A02 /* XeroProgrammingExerciseUITests.swift in Sources */,
+				10757C502A89BBEB00609597 /* Screens.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
