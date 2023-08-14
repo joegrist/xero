@@ -15,7 +15,7 @@ extension Main {
     class InvoiceModel {
         
         var invoice: Invoice
-        var hidden: Bool = false
+        var hidden: Bool = true
         
         init(invoice: Invoice) {
             self.invoice = invoice
@@ -40,8 +40,14 @@ extension Main {
          * For realsies, would have to make sure it only applies to the first screenload
          * Also make sure only runs on first data display from empty
          */
-        func animate() {
-            invoices.forEach{ $0.hidden = true }
+        func introduce(animated: Bool) {
+            
+            guard animated else {
+                invoices.forEach{ $0.hidden = true }
+                objectWillChange.send()
+                return
+            }
+            
             var delay: TimeInterval = 0
             invoices.forEach { model in
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [unowned self] in

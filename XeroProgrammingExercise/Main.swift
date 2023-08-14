@@ -40,14 +40,6 @@ struct Logo: View {
     }
 }
 
-func navAppearance(color: UIColor) {
-    let appearance = UINavigationBarAppearance()
-    let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: color]
-    appearance.largeTitleTextAttributes = attrs
-    appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
-    UINavigationBar.appearance().standardAppearance = appearance
-}
-
 struct Main: View {
     
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
@@ -57,7 +49,10 @@ struct Main: View {
         // I've hacked the main list in this mini-app to always have
         // a dark green background.  So we need to make sure the title
         // text is always white for contrast, ignoring dark/light mode.
-        navAppearance(color: UIColor.white)
+        // This is not ideal, as the detail view's navigation title
+        // becomes white-on-while, so I've had to mock it.
+        // Would need to be done better in a real app.
+        appDelegate.paintNavigationTitle(textColor: UIColor.white)
     }
     
     var body: some View {
@@ -80,10 +75,7 @@ struct Main: View {
             }
         }
         .onAppear(perform: {
-            if !appDelegate.isPreview {
-                viewModel.animate()
-            }
-            navAppearance(color: UIColor.white)
+            viewModel.introduce(animated: !appDelegate.isPreview)
         })
         .accentColor(Color("Brand"))
     }
