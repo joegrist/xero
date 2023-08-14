@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103358572A89F0C90097C885 /* SlideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103358562A89F0C90097C885 /* SlideEffect.swift */; };
+		103358592A89F1010097C885 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103358582A89F1010097C885 /* Detail.swift */; };
 		10757C4A2A89AA9200609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C492A89AA9200609597 /* XeroShared */; };
 		10757C4C2A89AAD400609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C4B2A89AAD400609597 /* XeroShared */; };
 		10757C4E2A89AAF400609597 /* XeroShared in Frameworks */ = {isa = PBXBuildFile; productRef = 10757C4D2A89AAF400609597 /* XeroShared */; };
@@ -14,8 +16,8 @@
 		1098B6A02A84519900E30C7A /* Gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B69F2A84519900E30C7A /* Gym.swift */; };
 		1098B6A22A84526400E30C7A /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A12A84526400E30C7A /* Api.swift */; };
 		1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A32A8462ED00E30C7A /* Extensions.swift */; };
-		1098B6A82A84755900E30C7A /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A72A84755900E30C7A /* Main.swift */; };
-		1098B6AC2A84797300E30C7A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6AB2A84797300E30C7A /* ViewModel.swift */; };
+		1098B6A82A84755900E30C7A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6A72A84755900E30C7A /* Home.swift */; };
+		1098B6AC2A84797300E30C7A /* HomeViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6AB2A84797300E30C7A /* HomeViewModels.swift */; };
 		13A61E8A2460C89500445A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E892460C89500445A02 /* AppDelegate.swift */; };
 		13A61E8C2460C89500445A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E8B2460C89500445A02 /* SceneDelegate.swift */; };
 		13A61E932460C89A00445A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A61E922460C89A00445A02 /* Assets.xcassets */; };
@@ -44,13 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		103358562A89F0C90097C885 /* SlideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideEffect.swift; sourceTree = "<group>"; };
+		103358582A89F1010097C885 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		1033585C2A89F21E0097C885 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		10757C472A89A45100609597 /* XeroShared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = XeroShared; sourceTree = "<group>"; };
 		10757C4F2A89BBEB00609597 /* Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screens.swift; sourceTree = "<group>"; };
 		1098B69F2A84519900E30C7A /* Gym.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gym.swift; sourceTree = "<group>"; };
 		1098B6A12A84526400E30C7A /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		1098B6A32A8462ED00E30C7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		1098B6A72A84755900E30C7A /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		1098B6AB2A84797300E30C7A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1098B6A72A84755900E30C7A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		1098B6AB2A84797300E30C7A /* HomeViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModels.swift; sourceTree = "<group>"; };
 		13A61E862460C89500445A02 /* XeroProgrammingExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XeroProgrammingExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A61E892460C89500445A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13A61E8B2460C89500445A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +100,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1033585A2A89F13B0097C885 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1098B6AB2A84797300E30C7A /* HomeViewModels.swift */,
+				1098B6A72A84755900E30C7A /* Home.swift */,
+				103358582A89F1010097C885 /* Detail.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1033585B2A89F1570097C885 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13A61EBC2460CA5C00445A02 /* InvoiceLine.swift */,
+				13A61EBA2460CA4F00445A02 /* Invoice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		10757C482A89AA9200609597 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +129,7 @@
 		13A61E7D2460C89500445A02 = {
 			isa = PBXGroup;
 			children = (
+				1033585C2A89F21E0097C885 /* README.md */,
 				10757C472A89A45100609597 /* XeroShared */,
 				13A61E882460C89500445A02 /* XeroProgrammingExercise */,
 				13A61E9F2460C89A00445A02 /* XeroProgrammingExerciseTests */,
@@ -127,18 +152,17 @@
 		13A61E882460C89500445A02 /* XeroProgrammingExercise */ = {
 			isa = PBXGroup;
 			children = (
+				1033585B2A89F1570097C885 /* Models */,
+				1033585A2A89F13B0097C885 /* Screens */,
 				13A61E892460C89500445A02 /* AppDelegate.swift */,
 				13A61E8B2460C89500445A02 /* SceneDelegate.swift */,
 				13A61E922460C89A00445A02 /* Assets.xcassets */,
 				13A61E942460C89A00445A02 /* LaunchScreen.storyboard */,
 				13A61E972460C89A00445A02 /* Info.plist */,
-				13A61EBA2460CA4F00445A02 /* Invoice.swift */,
-				13A61EBC2460CA5C00445A02 /* InvoiceLine.swift */,
 				1098B69F2A84519900E30C7A /* Gym.swift */,
 				1098B6A12A84526400E30C7A /* Api.swift */,
 				1098B6A32A8462ED00E30C7A /* Extensions.swift */,
-				1098B6A72A84755900E30C7A /* Main.swift */,
-				1098B6AB2A84797300E30C7A /* ViewModel.swift */,
+				103358562A89F0C90097C885 /* SlideEffect.swift */,
 			);
 			path = XeroProgrammingExercise;
 			sourceTree = "<group>";
@@ -302,14 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1098B6AC2A84797300E30C7A /* ViewModel.swift in Sources */,
-				1098B6A82A84755900E30C7A /* Main.swift in Sources */,
+				1098B6AC2A84797300E30C7A /* HomeViewModels.swift in Sources */,
+				1098B6A82A84755900E30C7A /* Home.swift in Sources */,
 				1098B6A02A84519900E30C7A /* Gym.swift in Sources */,
 				13A61EBD2460CA5C00445A02 /* InvoiceLine.swift in Sources */,
 				1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */,
 				13A61EBB2460CA4F00445A02 /* Invoice.swift in Sources */,
 				13A61E8A2460C89500445A02 /* AppDelegate.swift in Sources */,
 				1098B6A22A84526400E30C7A /* Api.swift in Sources */,
+				103358572A89F0C90097C885 /* SlideEffect.swift in Sources */,
+				103358592A89F1010097C885 /* Detail.swift in Sources */,
 				13A61E8C2460C89500445A02 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

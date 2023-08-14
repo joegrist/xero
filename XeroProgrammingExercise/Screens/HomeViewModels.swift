@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension Main {
+extension Home {
     
     /** UI state for individual invoices */
     class InvoiceModel {
@@ -21,7 +21,7 @@ extension Main {
             self.invoice = invoice
         }
     }
-    
+
     /** UI state for the list of invoices */
     @MainActor class ListModel: ObservableObject {
         
@@ -37,7 +37,7 @@ extension Main {
         /**
          * Activate list row animation on presentatom
          * Works OK for mini-app
-         * For realsies, would have to make sure it only applies to the first screenload
+         * For realsies, would have to make sure it only applies to the first screenful
          * Also make sure only runs on first data display from empty
          */
         func introduce(animated: Bool) {

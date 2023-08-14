@@ -12,25 +12,8 @@ import SwiftUI
 struct SampleApp: App {
     var body: some Scene {
         WindowGroup {
-            Main()
+            Home()
         }
-    }
-}
-
-/**
- * Fancy slide-in animation for list rows
- */
-struct SlideEffect: GeometryEffect {
-    
-    var y: CGFloat = 0
-
-    var animatableData: CGFloat {
-        get { return y }
-        set { y = newValue }
-    }
-
-    func effectValue(size: CGSize) -> ProjectionTransform {
-        return ProjectionTransform(CGAffineTransform(translationX: 0, y: y * 20))
     }
 }
 
@@ -40,7 +23,7 @@ struct Logo: View {
     }
 }
 
-struct Main: View {
+struct Home: View {
     
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     @StateObject private var viewModel = ListModel()
@@ -57,6 +40,8 @@ struct Main: View {
     
     var body: some View {
         
+        // This should really be a NavigationStack but I hit a problem
+        // probably caused by the beta XCode I'm using. So old approach.
         NavigationView {
             ZStack {
                 Color("Brand").ignoresSafeArea()
@@ -71,7 +56,7 @@ struct Main: View {
                         .padding([.leading, .trailing])
                 }
                 .navigationTitle("Invoices")
-                // For real app, would need an empty view here
+                // For real app, would need an empty-state display here
             }
         }
         .onAppear(perform: {
@@ -83,9 +68,9 @@ struct Main: View {
 
 struct InvoiceList: View {
     
-    @ObservedObject var model: Main.ListModel
+    @ObservedObject var model: Home.ListModel
     
-    func makeSlideEffect(model: Main.InvoiceModel) -> some GeometryEffect {
+    func makeSlideEffect(model: Home.InvoiceModel) -> some GeometryEffect {
       return SlideEffect(
         y: model.hidden ? 1 : 0)
     }
@@ -112,7 +97,7 @@ struct InvoiceList: View {
 
 struct InvoiceCard: View {
     
-    var model: Main.InvoiceModel
+    var model: Home.InvoiceModel
     
     var body: some View {
         HStack(alignment: .center) {
@@ -132,90 +117,14 @@ struct InvoiceCard: View {
     }
 }
 
-struct InvoiceView: View {
-    var model: Invoice
-    
-    var body: some View {
-        ZStack {
-            VStack {
-                Spacer()
-                Logo()
-                    .foregroundColor(Color("Brand"))
-                    .accessibilityHidden(true)
-            }
-            ScrollView {
-                VStack(alignment: .leading) {
-                    // Hmm. Faking a navigation header.
-                    // Not good.  SwiftUI not letting me change the colour here on an actual one,
-                    // comes up white.
-                    // Would have to do better in a real app.
-                    Text("Invoice \(model.number)").font(.largeTitle).bold()
-                        .padding([.bottom])
-                    HStack(alignment: .firstTextBaseline) {
-                        Text(model.formattedTotal).foregroundColor(Color("Brand")).font(.title)
-                            .accessibilityLabel(model.speakableTotal)
-                        Spacer()
-                        Text(model.formattedDate)
-                            .font(.footnote)
-                    }
-                    .accessibilityElement(children: .combine)
-                    .accessibilityAddTraits(.isSummaryElement)
-                    Divider()
-                    VStack(alignment: .leading) {
-                        ForEach(model.lineItems) { item in
-                            InvoiceLineView(model: item)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
-                    .accessibilityElement(children: .contain)
-                    .accessibilityLabel("Line Items")
-                    Spacer()
-                }
-                // Limit width so it doesn't look stupid wide on
-                // big devices like iPads.
-                .frame(maxWidth: 600)
-            }
-            .padding()
-            .accessibilityElement(children: .contain)
-        }
-       
-        .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-struct InvoiceLineView: View {
-    var model: InvoiceLine
-    
-    var body: some View {
-        HStack(alignment: .bottom) {
-            VStack(alignment: .leading) {
-                Text(model.description).bold()
-                Text("\(model.quantity) @ \(model.formattedCost)")
-            }
-            Spacer()
-            Text(model.formattedTotal)
-                .font(.title2)
-                .accessibilityLabel(model.speakableTotal)
-        }
-        .accessibilityElement(children: .combine)
-        Divider()
-    }
-}
-
 struct Main_Previews: PreviewProvider {
     static var previews: some View {
-        Main()
+        Home()
     }
 }
 
 struct InvoiceList_Previews: PreviewProvider {
     static var previews: some View {
-        InvoiceList(model: Main.ListModel())
-    }
-}
-
-struct InvoiceView_Previews: PreviewProvider {
-    static var previews: some View {
-        InvoiceView(model: Main.ListModel().invoices.first!.invoice)
+        InvoiceList(model: Home.ListModel())
     }
 }

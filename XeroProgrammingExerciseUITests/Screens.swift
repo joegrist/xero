@@ -25,7 +25,7 @@ class Screen {
 class HomeScreen: Screen {
     
     var secondInvoice: XCUIElement {
-        let nav = invoices.element(boundBy: 2)
+        let nav = invoices.element(boundBy: 1)
         if !nav.waitForExistence(timeout: 2) {
             XCTFail("List of invoices did not appear")
         }
@@ -45,6 +45,10 @@ class ListScreen: Screen {
     
     var backButton: XCUIElement {
         return app.buttons["Invoices"]
+    }
+    
+    var itemsList: XCUIElementQuery {
+        return app.otherElements["Line Items"].children(matching: .staticText)
     }
     
     override var at: Bool{

@@ -22,7 +22,6 @@ class XeroProgrammingExerciseUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments.append(XeroShared.Config.TEST_ARGUMENT)
         app.launch()
-        //print(app.debugDescription)
         return app
     }
     
@@ -55,11 +54,14 @@ class XeroProgrammingExerciseUITests: XCTestCase {
         XCTAssert(home.at)
     }
     
+    // Detail page is showing correct info
     func testInvoiceDetails() {
         let app = launch()
         let home = HomeScreen(of: app)
         let list = ListScreen(of: app)
         home.secondInvoice.tap()
         XCTAssert(list.at)
+        XCTAssertEqual(list.itemsList.count, 2)
+        XCTAssertTrue(list.itemsList.element(boundBy: 0).label.contains("Orange"))
     }
 }
