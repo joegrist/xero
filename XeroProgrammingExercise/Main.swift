@@ -153,6 +153,10 @@ struct InvoiceView: View {
             }
             ScrollView {
                 VStack(alignment: .leading) {
+                    // Hmm. Faking a navigation header.
+                    // Not good.  SwiftUI not letting me change the colour here on an actual one,
+                    // comes up white.
+                    // Would have to do better in a real app.
                     Text("Invoice \(model.number)").font(.largeTitle).bold()
                         .padding([.bottom])
                     HStack(alignment: .firstTextBaseline) {
@@ -175,6 +179,8 @@ struct InvoiceView: View {
                     .accessibilityLabel("Line Items")
                     Spacer()
                 }
+                // Limit width so it doesn't look stupid wide on
+                // big devices like iPads.
                 .frame(maxWidth: 600)
             }
             .padding()
