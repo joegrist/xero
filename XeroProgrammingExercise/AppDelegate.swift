@@ -17,5 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ObservableObject {
     var isPreview: Bool {
         return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
     }
+    
+    func paintLargeNavigationTitle(color: UIColor) {
+        let appearance = UINavigationBarAppearance()
+        let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: color]
+        appearance.largeTitleTextAttributes = attrs
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        UINavigationBar.appearance().standardAppearance = appearance
+    }
 }
 
