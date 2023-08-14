@@ -17,7 +17,6 @@
 		1098B6AC2A84797300E30C7A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1098B6AB2A84797300E30C7A /* ViewModel.swift */; };
 		13A61E8A2460C89500445A02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E892460C89500445A02 /* AppDelegate.swift */; };
 		13A61E8C2460C89500445A02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E8B2460C89500445A02 /* SceneDelegate.swift */; };
-		13A61E8E2460C89500445A02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61E8D2460C89500445A02 /* ViewController.swift */; };
 		13A61E932460C89A00445A02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13A61E922460C89A00445A02 /* Assets.xcassets */; };
 		13A61E962460C89A00445A02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13A61E942460C89A00445A02 /* LaunchScreen.storyboard */; };
 		13A61EA12460C89A00445A02 /* XeroProgrammingExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A61EA02460C89A00445A02 /* XeroProgrammingExerciseTests.swift */; };
@@ -53,7 +52,6 @@
 		13A61E862460C89500445A02 /* XeroProgrammingExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XeroProgrammingExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13A61E892460C89500445A02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13A61E8B2460C89500445A02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13A61E8D2460C89500445A02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13A61E922460C89A00445A02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13A61E952460C89A00445A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13A61E972460C89A00445A02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 			children = (
 				13A61E892460C89500445A02 /* AppDelegate.swift */,
 				13A61E8B2460C89500445A02 /* SceneDelegate.swift */,
-				13A61E8D2460C89500445A02 /* ViewController.swift */,
 				13A61E922460C89A00445A02 /* Assets.xcassets */,
 				13A61E942460C89A00445A02 /* LaunchScreen.storyboard */,
 				13A61E972460C89A00445A02 /* Info.plist */,
@@ -304,7 +301,6 @@
 			files = (
 				1098B6AC2A84797300E30C7A /* ViewModel.swift in Sources */,
 				1098B6A82A84755900E30C7A /* Main.swift in Sources */,
-				13A61E8E2460C89500445A02 /* ViewController.swift in Sources */,
 				1098B6A02A84519900E30C7A /* Gym.swift in Sources */,
 				13A61EBD2460CA5C00445A02 /* InvoiceLine.swift in Sources */,
 				1098B6A42A8462ED00E30C7A /* Extensions.swift in Sources */,

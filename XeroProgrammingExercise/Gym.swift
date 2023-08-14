@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ * All the code teh exercise asks to be made functional
+ */
 class Gym {
     
     static func exercise() {

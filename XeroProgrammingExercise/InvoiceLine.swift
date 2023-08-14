@@ -4,7 +4,11 @@ public struct InvoiceLine: CustomDebugStringConvertible, Equatable, Identifiable
 
     var invoiceLineId: Int
     var description: String
+    
+    /** Quantity (number of items) */
     var quantity: Int
+    
+    /** Item Cost (price per item) */
     var cost: Decimal
     
     init(invoiceLineId: Int, description: String, quantity: Int, cost: String) {
@@ -29,30 +33,28 @@ public struct InvoiceLine: CustomDebugStringConvertible, Equatable, Identifiable
         }
     }
     
+    /** `cost` formatted for onscreen text */
     var formattedCost: String {
         return cost.toCurrencyFormat()
     }
     
+    /** `totalCost` formatted for onscreen text */
     var formattedTotal: String {
         return totalCost.toCurrencyFormat()
     }
     
+    /** `totalCost` formatted for screen readers */
     var speakableTotal: String {
         return totalCost.toCurrencySpokenText()
     }
     
+    /**
+     * Total cost (`cost` * `quantity`)
+     */
     var totalCost: Decimal {
         get {
             return Decimal(quantity) * cost
         }
-    }
-    
-    func clone() -> InvoiceLine {
-        return InvoiceLine(
-            invoiceLineId: invoiceLineId,
-            description: description,
-            quantity: quantity,
-            cost: cost)
     }
     
     public var debugDescription: String {

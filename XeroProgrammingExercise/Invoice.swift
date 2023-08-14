@@ -23,16 +23,18 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         self.number = number
     }
     
+    // Implementing hashable so we can be bound to lazy stacks in SwiftUI
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     public static func == (lhs: Invoice, rhs: Invoice) -> Bool {
         return lhs.number == rhs.number
     }
     
+    // Needed for the Gym class
     static func sample() -> Invoice {
         return Invoice(number: 1)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
     }
     
     public var id: Int {
@@ -41,13 +43,23 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         }
     }
     
+    /**
+     * Add a line item to this invoice. Line item must have an ID number that is not already present in the invoice.
+     * - parameter line: The line item to add
+     * - throws: InvoiceError if the line is not valid, as this is a business-level error that this class can't know how to handle.
+     */
     func addInvoiceLine(_ line: InvoiceLine) throws {
+        //FIXME: this method was in the task instructions, so I've left it.  But this class probably should manage its own line item numbers rather than have them passed in.
         guard indexOfExisting(where: line.invoiceLineId) == nil else {
             throw InvoiceError.itemAlreadyExists(id: line.invoiceLineId)
         }
         lineItems.append(line)
     }
     
+    /**
+     * Remove a line from the invoice.  Does nothing if the line doesn't exist.
+     * - Parameter id: The line item ID to remove
+     */
     func removeInvoiceLine(having id: Int) {
         guard let index = indexOfExisting(where: id) else {
             return
@@ -56,20 +68,30 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
     }
     
     /**
+     * Total cost of this invoice
      * - returns: the sum of (Cost * Quantity) for each line item
      **/
     var total: Decimal {
         return lineItems.reduce(0, {total, line in total + line.totalCost })
     }
     
+    /**
+     * Cost of this invoice formatted for on-screen text
+     */
     var formattedTotal: String {
         return total.toCurrencyFormat()
     }
     
+    /**
+     * Cost of this invoice formatted for scrfeen readers
+     */
     var speakableTotal: String {
         return total.toCurrencySpokenText()
     }
 
+    /**
+     * Date of this invoice in standard app date format
+     */
     var formattedDate: String {
         return date.toStandardFormat()
     }
@@ -92,12 +114,13 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
      */
     func clone() throws -> Invoice {
         let result = Invoice(number: number)
-        try lineItems.forEach{ try result.addInvoiceLine($0.clone()) }
+        // Note: Invoice lines are value types, so they get duplicated here, not referenced
+        try lineItems.forEach{ try result.addInvoiceLine($0) }
         return result
     }
     
     /**
-     * order the lineItems by Id
+     * Order the lineItems by Id
      * */
     func orderLineItems() {
         lineItems = lineItems.sorted{ $0.invoiceLineId < $1.invoiceLineId }
@@ -118,7 +141,9 @@ public class Invoice: CustomDebugStringConvertible, Hashable {
         }
     }
     
-    /// remove the line items in the current invoice that are also in the sourceInvoice
+    /**
+     * Remove the line items in the current invoice that are also in the sourceInvoice
+     */
     func removeItems(alsoPresentIn other: Invoice) {
         var result: [InvoiceLine] = []
         lineItems.forEach { item in
