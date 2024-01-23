@@ -2,7 +2,7 @@
 
 ## Compatibility
 
-- Built and tested on Xcode Beta for iOS 17.  Should work on at least 16, but not tested, due to lack of gear at present.
+- Built and tested on Xcode for iOS 17.  Should work on at least 16, but not tested, due to lack of gear at present.
 - Tested on iPhone 14 simulator only for now.
 
 ## Solution Features
